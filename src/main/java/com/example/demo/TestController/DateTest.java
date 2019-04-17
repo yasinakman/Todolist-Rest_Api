@@ -4,7 +4,6 @@ import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import java.text.ParseException;
 
@@ -12,7 +11,7 @@ public class DateTest {
 
 
     public static void main(String[] args) throws ParseException {
-        RestTemplate restTemplate = new RestTemplate();
+//        RestTemplate restTemplate = new RestTemplate();
 //        TodoList list = new TodoList();
 //        list.setListName("yasinin listesi");
 
@@ -31,8 +30,8 @@ public class DateTest {
         event.setCreateDate(date);
         RestTemplate restTemplate = new RestTemplate();
 */
-        String path = "http://localhost:8080/addDependency";
-        String path2 = "http://localhost:8080/addTodoList";
+//        String path = "http://localhost:8080/addDependency";
+//        String path2 = "http://localhost:8080/addTodoList";
         MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
         headers.add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_UTF8_VALUE);
 

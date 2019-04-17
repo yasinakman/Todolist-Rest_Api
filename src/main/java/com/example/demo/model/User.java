@@ -1,14 +1,9 @@
 package com.example.demo.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import java.util.List;
-import java.util.Set;
+
 
 @Data
 @Entity
