@@ -49,7 +49,7 @@ fi
 # OS specific support.  $var _must_ be set to either true or false.
 cygwin=false;
 darwin=false;
-mingw=false
+mingw=true
 case "`uname`" in
   CYGWIN*) cygwin=true ;;
   MINGW*) mingw=true;;
