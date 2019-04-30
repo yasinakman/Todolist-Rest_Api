@@ -29,9 +29,9 @@ public class UserController {
     }
     @RequestMapping("/showUsers/{userName}")
     public User getUser(@PathVariable String userName){
-        User u1 = userDao.findByUserName(userName);
-        System.out.println(u1.getUserName());
-        return u1;
+        User user = userDao.findByUserName(userName);
+        System.out.println(user.getUserName());
+        return user;
     }
     @RequestMapping("/deleteUsers")
     public List<User> delAndShowUsers(){
