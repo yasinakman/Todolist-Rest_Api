@@ -1,6 +1,6 @@
 package com.example.demo.TestController;
 
-import com.example.demo.Repository.ListRepository;
+import com.example.demo.Repository.ListDAO;
 import com.example.demo.model.TodoItem;
 import com.example.demo.model.TodoList;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import java.util.List;
 @Component
 class Initializer implements CommandLineRunner {
     @Autowired
-    ListRepository listRepository;
+    ListDAO listRepository;
 
 
     @Override
