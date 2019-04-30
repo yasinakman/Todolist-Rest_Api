@@ -22,7 +22,7 @@ public class UserController {
     }
     @RequestMapping("/showUsers")
     public List<User> showUsers(){
-        List<User> users = new ArrayList<>();
+    	List<User> users = new ArrayList<>();
         userDao.findAll().forEach(users::add);
         System.out.println(users);
         return users;
@@ -32,5 +32,13 @@ public class UserController {
         User u1 = userDao.findByUserName(userName);
         System.out.println(u1.getUserName());
         return u1;
+    }
+    @RequestMapping("/deleteUsers")
+    public List<User> delAndShowUsers(){
+    	List<User> users = new ArrayList<>();
+    	System.out.println(users+"	deleted");
+    	userDao.deleteAll();
+    	userDao.findAll().forEach(users::add);
+    	return users;
     }
 }
