@@ -1,6 +1,6 @@
 package com.example.demo.Controller;
 
-import com.example.demo.Repository.UserRepository;
+import com.example.demo.Repository.UserDAO;
 import com.example.demo.model.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,23 +13,23 @@ import java.util.List;
 @CrossOrigin
 public class UserController {
     @Autowired
-    UserRepository userRepo;
+    UserDAO userDao;
 
     @RequestMapping("/addUser")
     public User addUser(User user){
-        userRepo.save(user);
+        userDao.save(user);
         return user;
     }
     @RequestMapping("/showUsers")
     public List<User> showUsers(){
         List<User> users = new ArrayList<>();
-        userRepo.findAll().forEach(users::add);
+        userDao.findAll().forEach(users::add);
         System.out.println(users);
         return users;
     }
     @RequestMapping("/showUsers/{userName}")
     public User getUser(@PathVariable String userName){
-        User u1 = userRepo.findByUserName(userName);
+        User u1 = userDao.findByUserName(userName);
         System.out.println(u1.getUserName());
         return u1;
     }

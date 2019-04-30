@@ -1,6 +1,6 @@
 package com.example.demo.Controller;
 
-import com.example.demo.Repository.ListRepository;
+import com.example.demo.Repository.ListDAO;
 import com.example.demo.model.TodoList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +11,7 @@ import java.util.List;
 @CrossOrigin
 public class ListController {
     @Autowired
-    ListRepository todoListDao;
+    ListDAO todoListDao;
     @Autowired
     ItemController itemCtl;
 

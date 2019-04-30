@@ -1,6 +1,6 @@
 package com.example.demo.Controller;
 
-import com.example.demo.Repository.ItemRepository;
+import com.example.demo.Repository.ItemDAO;
 import com.example.demo.model.TodoItem;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.*;
 @CrossOrigin
 public class ItemController {
     @Autowired
-    ItemRepository itemDao;
+    ItemDAO itemDao;
 
     @PostMapping("/addItem")
     public TodoItem addItem(TodoItem item) throws IllegalStateException {
