@@ -2,6 +2,7 @@ package com.example.demo.Controller;
 
 import com.example.demo.Repository.UserRepository;
 import com.example.demo.model.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,5 +26,11 @@ public class UserController {
         userRepo.findAll().forEach(users::add);
         System.out.println(users);
         return users;
+    }
+    @RequestMapping("/showUsers/{userName}")
+    public User getUser(@PathVariable String userName){
+        User u1 = userRepo.findByUserName(userName);
+        System.out.println(u1.getUserName());
+        return u1;
     }
 }
