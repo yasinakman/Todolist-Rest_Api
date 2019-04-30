@@ -18,6 +18,7 @@ public class UserController {
     @RequestMapping("/addUser")
     public User addUser(User user){
         userDao.save(user);
+        System.out.println(userDao.findByUserName(user.getUserName())+"	added");
         return user;
     }
     @RequestMapping("/showUsers")
@@ -27,10 +28,10 @@ public class UserController {
         System.out.println(users);
         return users;
     }
-    @RequestMapping("/showUsers/{userName}")
+    @RequestMapping("/showUser/{userName}")
     public User getUser(@PathVariable String userName){
         User user = userDao.findByUserName(userName);
-        System.out.println(user.getUserName());
+        System.out.println(user);
         return user;
     }
     @RequestMapping("/deleteUsers")
